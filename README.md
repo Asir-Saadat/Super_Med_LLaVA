@@ -20,7 +20,18 @@ Super_Med_LLaVA/
 
 ## Dataset: `dataset_3`
 
-`dataset_3` is the core dataset used for training and evaluation. It is organized by imaging domain:
+`dataset_3` is the core dataset used for training and evaluation. It is **perfectly balanced** — each domain has exactly equal answerable and unanswerable samples:
+
+| Domain | Train (Answerable) | Train (Unanswerable) | Test (Answerable) | Test (Unanswerable) |
+|---|---|---|---|---|
+| X-ray | 1,539 | 1,539 | 385 | 385 |
+| MRI | 4,960 | 4,960 | 1,241 | 1,241 |
+| CT | 6,400 | 6,400 | 1,601 | 1,601 |
+| Histology | 4,916 | 4,916 | 1,229 | 1,229 |
+| Gross Pathology | 560 | 560 | 140 | 140 |
+| **Total** | **18,375** | **18,375** | **4,596** | **4,596** |
+
+It is organized by imaging domain:
 
 ```
 dataset_3/
@@ -56,7 +67,7 @@ Each record in these files has the following fields:
 
 ### `dataset_3_matched`
 
-A size-matched version of the combined dataset with approximately equal standard and UPD samples per domain (5,600 total: 2,800 standard + 2,800 UPD). Used to train the combined CLIP-UP model with balanced class representation across domains.
+A size-matched version of `dataset_3` capped at the smallest domain (gross pathology: 560 per type), giving exactly **560 answerable + 560 unanswerable per domain × 5 domains = 5,600 total**. Used to train the combined CLIP-UP model without domain size bias.
 
 ---
 
