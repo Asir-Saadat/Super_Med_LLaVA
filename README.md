@@ -56,7 +56,7 @@ Each record in these files has the following fields:
 
 ### `dataset_3_matched`
 
-A size-matched version of the combined dataset with exactly 560 standard + 560 UPD samples per domain (5,600 total). Used to train the combined CLIP-UP model without domain imbalance.
+A size-matched version of the combined dataset with approximately equal standard and UPD samples per domain (5,600 total: 2,800 standard + 2,800 UPD). Used to train the combined CLIP-UP model with balanced class representation across domains.
 
 ---
 
