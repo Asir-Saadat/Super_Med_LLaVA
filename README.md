@@ -65,10 +65,6 @@ Each record in these files has the following fields:
 | `masked_answer` | null |
 | `domain` | Domain label (in combined split only) |
 
-### `dataset_3_matched`
-
-A size-matched version of `dataset_3` capped at the smallest domain (gross pathology: 560 per type), giving exactly **560 answerable + 560 unanswerable per domain × 5 domains = 5,600 total**. Used to train the combined CLIP-UP model without domain size bias.
-
 ---
 
 ## Guardrails (`guardrails/`)
